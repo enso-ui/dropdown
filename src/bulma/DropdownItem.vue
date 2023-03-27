@@ -4,7 +4,7 @@
             'is-active': selected,
             'has-background-light': current && !selected }
         ]"
-        @click="select"
+        @click.stop="select"
         @mouseenter="makeCurrent(this)">
         <slot name="default"
             :current="current"/>
