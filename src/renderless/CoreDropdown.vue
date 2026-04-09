@@ -198,7 +198,7 @@ export default {
     render() {
         return this.$slots.default({
             selection: !!this.current,
-            keydown: { keydown: this.keydown },
+            keydown: this.keydown,
             hide: this.hide,
             open: this.open,
             show: this.show,

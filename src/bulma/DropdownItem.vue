@@ -2,7 +2,7 @@
     <a class="dropdown-item"
         :class="[{
             'is-active': selected,
-            'has-background-light': current && !selected }
+            'is-current': current && !selected }
         ]"
         @click="select"
         @mouseenter="makeCurrent(this)">
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'DropdownItem',
 
@@ -54,3 +53,15 @@ export default {
     },
 };
 </script>
+
+<style lang="scss">
+    .dropdown-item.is-current,
+    .dropdown-item.is-active,
+    .dropdown-item:hover {
+        background-color: var(
+            --bulma-dropdown-item-hover-background-color,
+            var(--bulma-scheme-main-ter)
+        );
+        color: var(--bulma-text-strong);
+    }
+</style>

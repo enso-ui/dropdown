@@ -7,24 +7,29 @@
                 keydown, hide, open, selection, show, triggerEvents,
             }">
                 <div class="dropdown-trigger"
-                    v-on="keydown">
+                    @keydown="keydown">
                     <slot name="trigger"
                         :hide="hide"
                         :open="open"
+                        :opens-up="opensUp || isUp"
                         :show="show"
                         :selection="selection"
                         :trigger-events="triggerEvents">
                         <button class="button input"
+                            :class="{ 'is-open': open }"
                             type="button"
                             v-on="triggerEvents">
                             <slot name="label"/>
-                            <dropdown-indicator :open="open"/>
+                            <dropdown-indicator
+                                :open="open"
+                                :opens-up="opensUp || isUp"
+                                v-if="!$attrs.disabled && !$attrs.readonly"/>
                         </button>
                     </slot>
                 </div>
                 <fade>
                     <div class="dropdown-menu"
-                        v-on="keydown"
+                        @keydown="keydown"
                         v-click-outside="hide"
                         v-fits-below="fitsBelow"
                         v-if="open">
@@ -86,17 +91,26 @@ export default {
 </script>
 
 <style lang="scss">
-
     .dropdown.vue-dropdown {
         .dropdown-trigger {
             .button.input {
-                min-width: 4em;
+                min-width: var(--bulma-control-height);
                 justify-content: flex-start;
-                line-height: 1.5;
+                transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
 
-                .angle {
+                &:hover {
+                    border-color: var(--bulma-border-hover);
+                }
+
+                &:focus,
+                &:focus-visible,
+                &.is-open {
+                    border-color: var(--bulma-border-active);
+                    box-shadow: none;
+                }
+
+                .dropdown-indicator {
                     position: absolute;
-                    top: 0.33rem;
                     [dir='ltr'] & {
                         right: 0.5rem;
                     }
@@ -114,11 +128,10 @@ export default {
         .dropdown-content {
             width: fit-content;
             .items {
-                max-height: 12.4em;
+                max-height: 12rem;
                 overflow: auto;
                 width: inherit;
             }
         }
     }
-
 </style>
