@@ -29,7 +29,7 @@ This package can also be consumed outside the Enso ecosystem.
 ## Features
 
 - exports `Dropdown` and `DropdownItem` from the Bulma entrypoint
-- exports `CoreDropdown` and `CoreDropdownItem` from the renderless entrypoint
+- exports `CoreDropdown` from the renderless entrypoint
 - supports keyboard navigation, selection tracking, click-outside closing, and up/down placement
 - composes cleanly with custom trigger, controls, and item slots
 
@@ -48,7 +48,7 @@ export default {
 Renderless usage:
 
 ```js
-import { CoreDropdown, CoreDropdownItem } from '@enso-ui/dropdown/renderless';
+import { CoreDropdown } from '@enso-ui/dropdown/renderless';
 ```
 
 ## API
@@ -100,18 +100,6 @@ Props:
 Events:
 - `show`
 - `hide`
-
-### `CoreDropdownItem`
-
-Renderless item registration helper.
-
-Import: `@enso-ui/dropdown/renderless`
-
-Props:
-- `selected: boolean` default `false`
-
-Events:
-- `select`
 
 ## Depends On
 
