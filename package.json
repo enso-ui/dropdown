@@ -1,7 +1,7 @@
 {
   "name": "@enso-ui/dropdown",
   "version": "4.1.3",
-  "description": "Vue Dropdown component",
+  "description": "Bulma and renderless dropdown components for Enso UI.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
