@@ -94,6 +94,7 @@ export default {
     .dropdown.vue-dropdown {
         .dropdown-trigger {
             .button.input {
+                font-family: var(--bulma-body-family);
                 min-width: var(--bulma-control-height);
                 justify-content: flex-start;
                 transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
