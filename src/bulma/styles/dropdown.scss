@@ -1,0 +1,70 @@
+.dropdown.vue-dropdown {
+    .dropdown-trigger {
+        .button.input {
+            --enso-control-hover-border-color: var(--bulma-border-hover);
+            --enso-control-active-border-color: var(--bulma-border-active);
+            font-family: var(--bulma-body-family);
+            border-radius: var(--bulma-radius);
+            min-width: var(--bulma-control-height);
+            min-height: var(--bulma-control-height);
+            height: var(--bulma-control-height);
+            justify-content: flex-start;
+            transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+
+            &:hover {
+                border-color: var(--enso-control-hover-border-color);
+            }
+
+            &:focus,
+            &:focus-visible,
+            &.is-open {
+                border-color: var(--enso-control-active-border-color);
+                box-shadow: none;
+            }
+
+            &.has-error {
+                --enso-control-hover-border-color: var(--bulma-danger);
+                --enso-control-active-border-color: var(--bulma-danger);
+                border-color: var(--bulma-danger);
+            }
+
+            &.is-successful {
+                --enso-control-hover-border-color: var(--bulma-success);
+                --enso-control-active-border-color: var(--bulma-success);
+                border-color: var(--bulma-success);
+            }
+
+            &.has-warning {
+                --enso-control-hover-border-color: var(--bulma-warning);
+                --enso-control-active-border-color: var(--bulma-warning);
+                border-color: var(--bulma-warning);
+            }
+
+            .dropdown-indicator {
+                position: absolute;
+
+                [dir='ltr'] & {
+                    right: 0.5rem;
+                }
+
+                [dir='rtl'] & {
+                    left: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        min-width: unset;
+    }
+
+    .dropdown-content {
+        width: fit-content;
+
+        .items {
+            max-height: 12rem;
+            overflow: auto;
+            width: inherit;
+        }
+    }
+}
