@@ -45,15 +45,13 @@
 
             .dropdown-indicator {
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
 
                 [dir='ltr'] & {
-                    right: 0.7rem;
+                    right: 0.5rem;
                 }
 
                 [dir='rtl'] & {
-                    left: 0.7rem;
+                    left: 0.5rem;
                 }
             }
         }
