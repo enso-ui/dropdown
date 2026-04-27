@@ -4,11 +4,14 @@
             --enso-control-hover-border-color: var(--bulma-border-hover);
             --enso-control-active-border-color: var(--bulma-border-active);
             font-family: var(--bulma-body-family);
+            border: 1px solid var(--enso-surface-border);
             border-radius: var(--bulma-radius);
             min-width: var(--bulma-control-height);
             min-height: var(--bulma-control-height);
             height: var(--bulma-control-height);
             justify-content: flex-start;
+            padding-inline-start: var(--bulma-control-padding-horizontal);
+            padding-inline-end: 1.5rem;
             transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
 
             &:hover {
@@ -42,13 +45,15 @@
 
             .dropdown-indicator {
                 position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
 
                 [dir='ltr'] & {
-                    right: 0.5rem;
+                    right: 0.7rem;
                 }
 
                 [dir='rtl'] & {
-                    left: 0.5rem;
+                    left: 0.7rem;
                 }
             }
         }

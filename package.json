@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/dropdown",
-  "version": "4.1.5",
+  "version": "4.1.6",
   "description": "Bulma and renderless dropdown components for Enso UI.",
   "main": "index.js",
   "scripts": {
